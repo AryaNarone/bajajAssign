@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import TextInput from './TextInput';
 import DropdownMenu from './DropdownMenu';
-import MultiSelect from './MultiSelect';
 import ResultDisplay from './ResultDisplay';
 import './App.css';
 
