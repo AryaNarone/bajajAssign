@@ -1,6 +1,7 @@
 // src/MultiSelect.tsx
 import React from 'react';
 import Select, { MultiValue } from 'react-select';
+import './MultiSelect.css';
 
 interface Option {
   value: string;
@@ -19,11 +20,13 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ setSelectedOptions }) => {
   ];
 
   return (
-    <Select
-      isMulti
-      options={options}
-      onChange={setSelectedOptions}
-    />
+    <div className="multi-select-container">
+      <Select
+        isMulti
+        options={options}
+        onChange={setSelectedOptions}
+      />
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 // src/TextInput.tsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import './TextInput.css';
 
 interface TextInputProps {
   setResponse: (response: any) => void;
@@ -13,7 +14,6 @@ const TextInput: React.FC<TextInputProps> = ({ setResponse, setShowDropdown }) =
   const handleSubmit = async () => {
     try {
       const parsedInput = JSON.parse(jsonInput);
-      console.log(parsedInput);
       const response = await axios.post('https://bajajbackend-opal.vercel.app/bfhl', parsedInput);
       setResponse(response.data);
       setShowDropdown(true);
@@ -23,7 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({ setResponse, setShowDropdown }) =
   };
 
   return (
-    <div>
+    <div className="text-input-container">
       <input
         type="text"
         value={jsonInput}

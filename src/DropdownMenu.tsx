@@ -1,5 +1,6 @@
 // src/DropdownMenu.tsx
 import React from 'react';
+import './DropdownMenu.css';
 
 interface DropdownMenuProps {
   setVisibleSections: (sections: string[]) => void;
@@ -18,11 +19,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ setVisibleSections }) => {
   };
 
   return (
-    <select multiple onChange={handleSelect}>
-      <option value="Alphabets">Alphabets</option>
-      <option value="Numbers">Numbers</option>
-      <option value="Highest alphabet">Highest alphabet</option>
-    </select>
+    <div className="dropdown-container">
+      <select multiple onChange={handleSelect}>
+        <option value="Alphabets">Alphabets</option>
+        <option value="Numbers">Numbers</option>
+        <option value="Highest alphabet">Highest alphabet</option>
+      </select>
+    </div>
   );
 };
 
